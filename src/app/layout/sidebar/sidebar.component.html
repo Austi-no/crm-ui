@@ -1,0 +1,38 @@
+<div class="container_header">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="navigation scroll_auto">
+        <ul id="dc_accordion" class="sidebar-menu tree">
+          <li class="menu_sub">
+            <a href="#"> <i class="fa fa-home"></i> Dashboard </a>
+          </li>
+          <li class="menu_sub">
+            <a href="#"> <i class="fa fa-newspaper-o"></i> <span>Account </span> <span class="arrow"></span> </a>
+            <ul class="down_menu">
+              <li>
+                <a [routerLink]="['/account-create']" routerLinkActive="router-link-active" >Create-Account</a>
+              </li>
+              <li>
+                <a 
+                [routerLink]="['/account-list']" routerLinkActive="router-link-active" >Account-List</a>
+              </li>
+              
+            </ul>
+          </li>
+          <li class="menu_sub">
+            <a href="#"> <i class="fa fa-pie-chart"></i> <span>Contact</span> <span class="arrow"></span> </a>
+            <ul class="down_menu">
+              <li>
+                <a [routerLink]="['/create-contact']" routerLinkActive="router-link-active" >Create-Contact</a>
+              </li>
+              <li>
+                <a [routerLink]="['/contact-list']" routerLinkActive="router-link-active" >Contact-List</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

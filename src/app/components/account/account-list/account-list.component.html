@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-md-9">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a>Home</a></li>
+        <li class="breadcrumb-item"><a>Account</a></li>
+        <li class="breadcrumb-item active">Manage-Accounts</li>
+
+      </ol>
+    </nav>
+  </div>
+
+  <div class="col-md-3">
+
+
+    <nav class="navbar navbar-light bg-transparent navbar-demo float-right">
+
+      <div class="button-list">
+        <button routerLink="/home/add-account" class="btn btn-outline-primary"><i class="fa fa-plus-circle"></i> Add
+          New
+        </button>
+
+      </div>
+
+    </nav>
+
+
+  </div>
+</div>
+
+
+<!--page title end-->
+<div class="container-fluid">
+  <!-- state start-->
+  <div class="row">
+    <div class=" col-sm-12">
+      <div class="card card-shadow mb-4">
+
+        <div class="card-body">
+
+          <div class="form-group mt-">
+            <!-- .input-group -->
+            <div class="input-group input-group-alt">
+              <!-- .input-group-prepend -->
+              <div class="input-group-prepend">
+                <select class="custom-select">
+                  <!-- <option selected=""> Filter By </option> -->
+                  <option selected> Search Contact </option>
+                </select>
+              </div><!-- /.input-group-prepend -->
+              <!-- .input-group -->
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
+                </div><input type="text" class="form-control" placeholder="Search record...">
+              </div><!-- /.input-group -->
+            </div><!-- /.input-group -->
+          </div>
+
+          <div class="table table-responsive">
+            <table id="bs4-table" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <td>#</td>
+                  <th>Account Name</th>
+                  <th>Account Owner</th>
+                  <th>Parent Account</th>
+                  <th>Employees</th>
+                  <th>Ownership</th>
+                  <th>Account Type</th>
+                  <th>SIC Code</th>
+                  <th>Description</th>
+                  <th>Action</th>
+
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let list of accounts;let i=index">
+                  <td>{{1+i}}</td>
+                  <td>{{list.accountName}}</td>
+                  <td>{{list.accountOwner?.firstName}} {{list.accountOwner?.lastName}}</td>
+                  <td>{{list.parentAccount}}</td>
+                  <td>{{list.employees}}</td>
+                  <td>{{list.ownership}}</td>
+                  <td>{{list.accountType}}</td>
+                  <td>{{list.sicCode}}</td>
+                  <td>{{list.description}}</td>
+                  <td>
+                    <i (click)="viewDetail(list.id)" class="fa fa-eye mr-2" aria-hidden="true" style="color:blue;"></i>
+                    <i (click)="deleteAccount(list)" class="fa fa-trash" aria-hidden="true" style="color:red;"></i>
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- state end-->
+</div>

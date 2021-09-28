@@ -1,0 +1,190 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Account</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Account-Details</li>
+  </ol>
+</nav>
+
+<nav class="navbar navbar-light bg-transparent navbar-demo float-right">
+
+  <div class="button-list">
+    <button routerLink="/home/manage-accounts" class="btn btn-default" style="background-color:transparent;"><i
+        class="fa fa-arrow-left"></i> Return
+    </button>
+    <button class="btn btn-default" style="background-color:transparent;"><i class="fa fa-stop-circle"></i>
+      Discontinue</button>
+    <button class="btn btn-default" style="background-color:transparent;"><i class="fa fa-pencil"></i> Edit </button>
+    <button class="btn btn-default" style="background-color:transparent;"><i class="fa fa-external-link"></i>
+      Redirect</button>
+  </div>
+
+</nav>
+
+<div class=" card container-fluid mt-4  card-body">
+  <h3 class="mb-3">Account Details</h3>
+  <div class="row">
+
+
+    <div class="col-md-6 col-lg-6">
+
+      <table class="table table-user-information">
+        <tbody>
+          <tr>
+            <td><strong>Account Name</strong></td>
+            <td>{{account?.accountName}}</td>
+          </tr>
+          <tr>
+            <td><strong>Account Owner</strong></td>
+            <td>{{account?.accountOwner?.firstName}} {{account?.accountOwner?.lastName}}</td>
+          </tr>
+          <tr>
+            <td><strong>Website</strong></td>
+            <td>{{account?.website}}</td>
+          </tr>
+          <tr>
+            <td><strong>Ticker Symbol</strong></td>
+            <td>{{account?.tickerSymbol}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Parent Account</strong></td>
+            <td>{{account?.parentAccount}}</td>
+          </tr>
+          <tr>
+            <td><strong>Employees</strong></td>
+            <td>{{account?.employees}}</td>
+          </tr>
+
+          <tr>
+          <tr>
+            <td><strong>Ownership</strong></td>
+            <td>{{account?.ownership}}</td>
+          </tr>
+          <tr>
+            <td><strong>Industry</strong></td>
+            <td>{{account?.industry}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Account Type</strong></td>
+            <td>{{account?.accountType}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Account Number</strong></td>
+            <td>{{account?.accountNumber}}</td>
+          </tr>
+          <tr>
+            <td><strong>Account Site</strong></td>
+            <td>{{account?.accountSite}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Phone</strong></td>
+            <td>{{account?.phone}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Fax</strong></td>
+            <td>{{account?.fax}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Rating</strong></td>
+            <td>{{account?.rating}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>SIC Code</strong></td>
+            <td>{{account?.sicCode}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6 col-lg-6">
+      <table class="table table-user-information">
+        <tbody>
+          <tr>
+            <td><strong>Annual Revenue</strong></td>
+            <td>{{account?.annualRevenue}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Description</strong></td>
+            <td>{{account?.description}}</td>
+          </tr>
+          <tr>
+            <td class="text-center mt-3">
+              <h4>Billing Address</h4>
+            </td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>Country</strong></td>
+            <td>{{account?.billingAddress?.country | uppercase}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>State</strong></td>
+            <td>{{account?.billingAddress?.state}}</td>
+          </tr>
+          <tr>
+            <td><strong>City</strong></td>
+            <td>{{account?.billingAddress?.city}}</td>
+          </tr>
+          <tr>
+            <td><strong>Street</strong></td>
+            <td>{{account?.billingAddress?.street}}</td>
+          </tr>
+          <tr>
+            <td><strong>Code</strong></td>
+            <td>{{account?.billingAddress?.code}}</td>
+          </tr>
+
+          <tr>
+            <td class="text-center mt-3">
+              <h4>Shipping Address</h4>
+            </td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>Country</strong></td>
+            <td>{{account?.shippingAddress?.country}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>State</strong></td>
+            <td>{{account?.shippingAddress?.state}}</td>
+          </tr>
+          <tr>
+            <td><strong>City</strong></td>
+            <td>{{account?.shippingAddress?.city}}</td>
+          </tr>
+          <tr>
+            <td><strong>Street</strong></td>
+            <td>{{account?.shippingAddress?.street}}</td>
+          </tr>
+          <tr>
+            <td><strong>Code</strong></td>
+            <td>{{account?.shippingAddress?.code}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,225 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Account</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Account-Details</li>
+  </ol>
+</nav>
+
+<nav class="navbar navbar-light bg-transparent navbar-demo float-right">
+
+  <div class="button-list">
+    <button routerLink="/home/manage-contacts" class="btn btn-default" style="background-color:transparent;"><i
+        class="fa fa-arrow-left"></i> Return
+    </button>
+    <button class="btn btn-default" style="background-color:transparent;"><i class="fa fa-stop-circle"></i>
+      Discontinue</button>
+    <button class="btn btn-default" style="background-color:transparent;"><i class="fa fa-pencil"></i> Edit </button>
+    <button class="btn btn-default" style="background-color:transparent;"><i class="fa fa-external-link"></i>
+      Redirect</button>
+  </div>
+
+</nav>
+
+<div class=" card container-fluid mt-4  card-body">
+  <h3 class="mb-3">Account Details</h3>
+  <div class="row">
+
+
+    <div class="col-md-6 col-lg-6">
+
+      <table class="table table-user-information">
+        <tbody>
+          <tr>
+            <td><strong>Contact Owner</strong></td>
+            <td>{{contact?.contactOwner?.firstName}} {{contact?.contactOwner?.lastName}}</td>
+          </tr>
+          <tr>
+            <td><strong>Salutation</strong></td>
+            <td>{{contact?.salutation}}</td>
+          </tr>
+          <tr>
+            <td><strong>First Name</strong></td>
+            <td>{{contact?.firstName}}</td>
+          </tr>
+          <tr>
+            <td><strong>Last Name</strong></td>
+            <td>{{contact?.lastName}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Account Name</strong></td>
+            <td>{{contact?.accountName?.accountName}}</td>
+          </tr>
+          <tr>
+            <td><strong>Vendor Name</strong></td>
+            <td>{{contact?.vendorName}}</td>
+          </tr>
+
+          <tr>
+          <tr>
+            <td><strong>Campaign Source</strong></td>
+            <td>{{contact?.campaignSource}}</td>
+          </tr>
+          <tr>
+            <td><strong>Lead Source</strong></td>
+            <td>{{contact?.leadSource}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Title</strong></td>
+            <td>{{contact?.title}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Department</strong></td>
+            <td>{{contact?.department}}</td>
+          </tr>
+          <tr>
+            <td><strong>Date of Birth</strong></td>
+            <td>{{contact?.dateOfBirth}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Email Opt Out</strong></td>
+            <td>{{contact?.emailOptOut}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Skype ID</strong></td>
+            <td>{{contact?.skypeId}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Phone</strong></td>
+            <td>{{contact?.phone}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Mobile</strong></td>
+            <td>{{contact?.mobile}}</td>
+          </tr>
+          <tr>
+            <td><strong>Home Phone</strong></td>
+            <td>{{contact?.homePhone}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Other Phone</strong></td>
+            <td>{{contact?.otherPhone}}</td>
+          </tr>
+          <tr>
+            <td><strong>Fax</strong></td>
+            <td>{{contact?.fax}}</td>
+          </tr>
+          <tr>
+            <td><strong>Email</strong></td>
+            <td>{{contact?.email}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6 col-lg-6">
+      <table class="table table-user-information">
+        <tbody>
+
+
+
+          <tr>
+            <td><strong>Secondary Email</strong></td>
+            <td>{{contact?.secondaryEmail}}</td>
+          </tr>
+          <tr>
+            <td><strong>Assistant</strong></td>
+            <td>{{contact?.assistant}}</td>
+          </tr>
+          <tr>
+            <td><strong>Asst. Phone</strong></td>
+            <td>{{contact?.asstPhone}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Description</strong></td>
+            <td>{{contact?.description}}</td>
+          </tr>
+
+
+          <tr>
+            <td class="text-center mt-3">
+              <h4>Mailing Address</h4>
+            </td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>Country</strong></td>
+            <td>{{contact?.mailingAddress?.country | uppercase}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>State</strong></td>
+            <td>{{contact?.mailingAddress?.state}}</td>
+          </tr>
+          <tr>
+            <td><strong>City</strong></td>
+            <td>{{contact?.mailingAddress?.city}}</td>
+          </tr>
+          <tr>
+            <td><strong>Street</strong></td>
+            <td>{{contact?.mailingAddress?.street}}</td>
+          </tr>
+          <tr>
+            <td><strong>Code</strong></td>
+            <td>{{contact?.mailingAddress?.code}}</td>
+          </tr>
+
+          <tr>
+            <td class="text-center mt-3">
+              <h4>Other Address</h4>
+            </td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><strong>Country</strong></td>
+            <td>{{contact?.otherAddress?.country}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>State</strong></td>
+            <td>{{contact?.otherAddress?.state}}</td>
+          </tr>
+          <tr>
+            <td><strong>City</strong></td>
+            <td>{{contact?.otherAddress?.city}}</td>
+          </tr>
+          <tr>
+            <td><strong>Street</strong></td>
+            <td>{{contact?.otherAddress?.street}}</td>
+          </tr>
+          <tr>
+            <td><strong>Code</strong></td>
+            <td>{{contact?.otherAddress?.code}}</td>
+          </tr>
+
+          <tr>
+            <td><strong>Date Created</strong></td>
+            <td>{{contact?.createdBy |date}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,411 @@
+<div class="row">
+  <div class="col-md-9">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a>Home</a></li>
+        <li class="breadcrumb-item"><a>Contact</a></li>
+        <li class="breadcrumb-item active">Add-Contact</li>
+
+      </ol>
+    </nav>
+  </div>
+
+  <div class="col-md-3">
+    <nav class="navbar navbar-light bg-transparent navbar-demo float-right">
+
+      <div class="button-list">
+        <button routerLink="/home/manage-contacts" class="btn btn-outline-primary"><i class="fa fa-arrow-left"></i>
+          Return
+        </button>
+
+      </div>
+
+    </nav>
+
+  </div>
+</div>
+
+<div class="container-fluid">
+  <!-- state start-->
+  <div class="row">
+    <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <div class="card card-shadow mb-4">
+        <div class="card-header">
+          <div class="card-title">
+            Create Contact
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="col" formGroupName="contactOwner">
+                <div class="form-group">
+                  <label>Contact Owner</label>
+
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="id">
+                      <option>Select Contact Owner</option>
+                      <option *ngFor="let list of userList" value={{list.id}}>{{list.firstName}} {{list.lastName}}
+                      </option>
+                    </select>
+                  </span>
+
+                </div>
+              </div>
+              <div class="col">
+
+                <div class="form-group">
+                  <label>Salutation</label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="salutation">
+                      <option selected>Select Salutation</option>
+                      <option>Mr</option>
+                      <option>Mrs</option>
+                      <option>Miss</option>
+                      <option>Others</option>
+
+                    </select> </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control form-control-square" placeholder="First Name"
+                    formControlName="firstName">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control form-control-square" placeholder="Last Name "
+                    formControlName="lastName">
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" formGroupName="accountName">
+                <div class="form-group">
+                  <label>Account Name </label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="id">
+                      <option>Select Account Name</option>
+                      <option *ngFor="let list of accountList" value="{{list.id}}">{{list.accountName}}</option>
+
+                    </select> </span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Campaign Source </label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="campaignSource">
+                      <option>Select Campaign Related to Contact</option>
+                      <option>1</option>
+                      <option>2</option>
+
+                    </select> </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Lead Source </label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="leadSource">
+                      <option>Select Lead Source</option>
+                      <option>Email</option>
+                      <option>Social Media</option>
+                      <option>Marketer</option>
+                      <option>Call</option>
+                      <option>Walk In</option>
+
+                    </select> </span>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <label>Title </label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="title">
+                      <option>Select Title</option>
+                      <option>Software Engineer</option>
+                      <option>Nurse</option>
+                    </select> </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Department </label>
+                  <input type="text" class="form-control form-control-square" placeholder="Enter Department"
+                    formControlName="department">
+                </div>
+
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label> Date of Birth </label>
+                  <input type="date" class="form-control form-control-square" placeholder=" Date of Birth"
+                    formControlName="dateOfBirth">
+                </div>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label> Reports To </label>
+                  <textarea class="form-control" rows="1" formControlName="reportsTo"></textarea>
+                </div>
+
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label class="d-block">Email Opt In</label>
+                  <div class="custom-control custom-control-inline custom-radio">
+                    <input type="radio" class="custom-control-input" name="rdGroup1" id="rd1"
+                      formControlName="emailOptOut" value="true" name="emailOptOut"> <label class="custom-control-label"
+                      for="rd1">Yes</label>
+                  </div>
+                  <div class="custom-control custom-control-inline custom-radio">
+                    <input type="radio" class="custom-control-input" name="rdGroup1" id="rd2"
+                      formControlName="emailOptOut" value="false" name="emailOptOut"> <label
+                      class="custom-control-label" for="rd2">No</label>
+                  </div>
+
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label> Skype Id</label>
+                  <input type="text" class="form-control form-control-square " placeholder="Skype ID"
+                    formControlName="skypeId">
+                </div>
+
+
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label> Phone</label>
+                  <input type="text" class="form-control form-control-square" placeholder="Phone"
+                    formControlName="phone">
+                </div>
+
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label> Mobile</label>
+                  <input type="text" class="form-control form-control-square" placeholder="Mobile"
+                    formControlName="mobile">
+                </div>
+
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label> Home Phone</label>
+                  <input type="text" class="form-control form-control-square " placeholder="Home Phone"
+                    formControlName="homePhone">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label> Other Phone</label>
+                  <input type="text" class="form-control form-control-square" placeholder="Other Phone"
+                    formControlName="otherPhone">
+                </div>
+
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <label> Fax</label>
+                  <input type="text" class="form-control form-control-square" placeholder="015-584-784"
+                    formControlName="fax">
+                </div>
+
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label> Vendor Name</label>
+                  <input type="text" class="form-control form-control-square" placeholder="Vendor Name"
+                    formControlName="vendorName">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label> Email</label>
+                  <input type="email" class="form-control form-control-square" placeholder="example@gmail.com"
+                    formControlName="email">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label> Secondary Email</label>
+                  <input type="email" class="form-control form-control-square" placeholder="Secondary Email"
+                    formControlName="secondaryEmail">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label> Assistant</label>
+                  <input type="text" class="form-control form-control-square" placeholder="Assistant"
+                    formControlName="assistant">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Asst. Phone</label>
+                  <input type="text" class="form-control form-control-square" placeholder="Asst. Phone"
+                    formControlName="asstPhone">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label> Description</label>
+                  <textarea class="form-control" formControlName="description" rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <h6>Mailing Address</h6>
+            <hr>
+            <div class="row" formGroupName="mailingAddress">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Country</label>
+                      <input type="text" class="form-control form-control-square" placeholder="Country"
+                        formControlName="country">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label>State</label>
+                      <input type="text" class="form-control form-control-square" placeholder="State"
+                        formControlName="state">
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label> City </label>
+                      <input type="text" class="form-control form-control-square " placeholder="City"
+                        formControlName="city">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Street</label>
+                      <input type="text" class="form-control form-control-square " placeholder="Street"
+                        formControlName="street">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Postal Code</label>
+                      <input type="text" class="form-control form-control-square " placeholder="postal Code"
+                        formControlName="code">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <h6>Other Address</h6>
+            <hr>
+            <div class="row" formGroupName="otherAddress">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Country</label>
+                      <input type="text" class="form-control form-control-square" placeholder="Country"
+                        formControlName="country">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label>State</label>
+                      <input type="text" class="form-control form-control-square" placeholder="State"
+                        formControlName="state">
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label> City </label>
+                      <input type="text" class="form-control form-control-square " placeholder="City"
+                        formControlName="city">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Street</label>
+                      <input type="text" class="form-control form-control-square " placeholder="Street"
+                        formControlName="street">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Postal Code</label>
+                      <input type="text" class="form-control form-control-square " placeholder="Postal Code"
+                        formControlName="code">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <button (click)="createContact()" class="btn btn-primary float-right mr-3">Create Contact</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

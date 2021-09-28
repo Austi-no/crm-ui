@@ -1,0 +1,371 @@
+<div class="row">
+  <div class="col-md-9">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a>Home</a></li>
+        <li class="breadcrumb-item"><a>Account</a></li>
+        <li class="breadcrumb-item active">Add-Account</li>
+
+      </ol>
+    </nav>
+  </div>
+
+  <div class="col-md-3">
+
+    <nav class="navbar navbar-light bg-transparent navbar-demo float-right">
+
+      <div class="button-list">
+        <button routerLink="/home/manage-accounts" class="btn btn-outline-primary"><i class="fa fa-arrow-left"></i>
+          Return
+        </button>
+
+      </div>
+
+    </nav>
+
+  </div>
+</div>
+
+<div class="container-fluid">
+  <!-- state start-->
+  <div class="row">
+    <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <div class="card card-shadow mb-4">
+        <div class="card-header">
+          <div class="card-title">
+            Create Account
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Account Name</label>
+                  <input type="text" formControlName="accountName" class="form-control form-control-square"
+                    placeholder="Enter Account Name">
+                </div>
+              </div>
+              <div class="col" formGroupName="accountOwner">
+
+                <div class="form-group">
+                  <label>Account Owner</label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="id">
+                      <option>Select Account Owner</option>
+                      <option *ngFor="let list of userList" value="{{list.id}}">{{list.firstName}} {{list.lastName}}
+                      </option>
+
+
+                    </select> </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Website</label>
+                  <input type="url" class="form-control form-control-square" placeholder="https://www.example.com"
+                    formControlName="website">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Ticker Symbol</label>
+                  <input type="text" class="form-control form-control-square" placeholder="Ticker Symbol "
+                    formControlName="tickerSymbol">
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Parent Account </label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="parentAccount">
+                      <option>Select Parent Account</option>
+                      <option>1</option>
+                      <option>2</option>
+
+                    </select> </span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label> Number of Employees</label>
+                  <input type="number" class="form-control form-control-square" placeholder="Employees "
+                    formControlName="employees">
+                </div>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Ownership </label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="ownership">
+                      <option>Select Ownership</option>
+                      <option>1</option>
+                      <option>2</option>
+
+                    </select> </span>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <label>Industry </label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="industry">
+                      <option>Select Industry</option>
+                      <option value="Accounting">Accounting</option>
+                      <option value="Agriculture and Non-petrol Natural Resource Extraction">Agriculture and Non-petrol
+                        Natural
+                        Resource Extraction</option>
+                      <option value="Broadcasting Printing and Publishing">Broadcasting Printing and Publishing</option>
+                      <option value="Brokers">Brokers</option>
+                      <option value="Building Supply Retail">Building Supply Retail</option>
+                      <option value="Business Services">Business Services</option>
+                      <option value="Consulting">Consulting</option>
+                      <option value="Consumer Services">Consumer Services</option>
+                      <option value="Distributors & Dispatchers">Distributors & Dispatchers</option>
+                      <option value="Doctor's Offices and Clinics">Doctor's Offices and Clinics</option>
+                      <option value="Manufacturing">Manufacturing</option>
+                      <option value="Restaurants">Restaurants</option>
+                      <option value="Financial">Financial</option>
+                      <option value="Food Processing">Food Processing</option>
+                      <option value="Insurance">Insurance</option>
+                      <option value="Legal Services">Legal Services</option>
+                      <option value="Petrochemical Extraction and Distribution">Petrochemical Extraction and
+                        Distribution</option>
+                      <option value="Service Retail">Service Retail</option>
+                      <option value="Transportation">Transportation</option>
+                      <option value="Vehicle Retail">Vehicle Retail</option>
+                      <option value="Wholesale">Wholesale</option>
+
+                    </select> </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Account Type </label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="accountType">
+                      <option>Select Account Type</option>
+                      <option>1</option>
+                      <option>2</option>
+
+                    </select> </span>
+                </div>
+
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label> Account Number </label>
+                  <input type="text" class="form-control form-control-square" placeholder="Account Number"
+                    formControlName="accountNumber">
+                </div>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label> Account Site</label>
+                  <input type="text" class="form-control form-control-square" placeholder="e.g Headquarters or Lagos"
+                    formControlName="accountSite">
+                </div>
+
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label> Phone</label>
+                  <input type="text" class="form-control form-control-square" placeholder="Phone"
+                    formControlName="phone">
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col">
+                <div class="form-group">
+                  <label> Fax</label>
+                  <input type="text" class="form-control form-control-square " placeholder="Fax" formControlName="fax">
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <label> Rating</label>
+                  <span class="select-wrapper">
+                    <select class="form-control form-control-square" formControlName="rating">
+                      <option>Select Rating</option>
+                      <option>1</option>
+                      <option>2</option>
+
+                    </select> </span>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="row">
+
+              <div class="col">
+                <div class="form-group">
+                  <label> SIC Code</label>
+                  <input type="text" class="form-control form-control-square " placeholder="SIC Code"
+                    formControlName="sicCode">
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <label> Annual Revenue</label>
+                  <input type="text" class="form-control form-control-square " placeholder="Specify Annual Revenue "
+                    formControlName="annualRevenue">
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label> Description</label>
+                  <textarea class="form-control" formControlName="description" rows="3"
+                    placeholder="Specify any other details about the account"></textarea>
+                </div>
+              </div>
+            </div>
+
+
+            <h6>Billing Address</h6>
+            <hr>
+            <div class="row" formGroupName="billingAddress">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Country</label>
+                      <input type="text" class="form-control form-control-square" placeholder="Country"
+                        formControlName="country">
+                      <input type="text" placeholder="Id Number" formControlName="id" hidden>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label>State</label>
+                      <input type="text" class="form-control form-control-square" placeholder="State"
+                        formControlName="state">
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label> City </label>
+                      <input type="text" class="form-control form-control-square " placeholder="City"
+                        formControlName="city">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Street</label>
+                      <input type="text" class="form-control form-control-square " placeholder="Street"
+                        formControlName="street">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Postal Code</label>
+                      <input type="text" class="form-control form-control-square " placeholder="Postal code"
+                        formControlName="code">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <h6>Shipping Address</h6>
+            <hr>
+            <div class="row" formGroupName="shippingAddress">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Country</label>
+                      <input type="text" class="form-control form-control-square" placeholder="Country"
+                        formControlName="country">
+                      <input type="text" placeholder="Id Number" formControlName="id" hidden>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label>State</label>
+                      <input type="text" class="form-control form-control-square" placeholder="State"
+                        formControlName="state">
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label> City </label>
+                      <input type="text" class="form-control form-control-square " placeholder="City"
+                        formControlName="city">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Street</label>
+                      <input type="text" class="form-control form-control-square " placeholder="Street"
+                        formControlName="street">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label> Postal Code</label>
+                      <input type="text" class="form-control form-control-square " placeholder="Postal Code"
+                        formControlName="code">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div>
+              <button (click)="createAccount()" class="btn btn-primary float-right mr-3">Create Account</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
